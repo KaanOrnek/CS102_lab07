@@ -8,14 +8,23 @@ public class SimpleStackWithQueue {
     }
 
     public void push(String data){
+        SimpleQueue temp;
+
+        queue2.enqueue(data);
+        while( !queue1.isEmpty()){
+            queue2.enqueue(queue1.dequeue());
+        }
+        temp = queue2;
+        queue2 = queue1;
+        queue1 = temp;
 
     }
 
-    public void pop(){
-
+    public String pop(){
+        return queue1.dequeue();
     }
 
     public String toString(){
-
+        return queue1.toString();
     }
 }

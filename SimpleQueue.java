@@ -9,11 +9,15 @@ public class SimpleQueue {
         queue.addToTail(data);
     }
 
-    public void dequeue(){
-        queue.removeFromHead();
+    public String dequeue(){
+        return queue.removeFromHead();
     }
 
     public boolean isEmpty(){
         return queue.isEmpty();
+    }
+
+    public String toString(){
+        return queue.toString();
     }
 }
